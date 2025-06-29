@@ -42,5 +42,7 @@ If you’d like to learn more or discuss sports analytics, feel free to connect:
 📧 eshakhot24@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/eshakhot/)
 
+<img width="1318" alt="Screenshot 2025-06-29 at 5 53 57 PM" src="https://github.com/user-attachments/assets/5dd0e4ce-df00-4f2a-842a-d0a346c5cdda" />
 
+<img width="1314" alt="Screenshot 2025-06-29 at 6 48 48 PM" src="https://github.com/user-attachments/assets/eb271ba3-dac1-4bc0-9961-d01b150ea609" />
 

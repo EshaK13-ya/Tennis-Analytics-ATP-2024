@@ -1,0 +1,77 @@
+
+
+1st Serve Points Won % = 
+ROUND(DIVIDE(SUM('atp_matches_2024_1 1'[w_1stWon]), SUM('atp_matches_2024_1 1'[w_1stIn])) * 100, 0)
+
+1st Serves In % = 
+ROUND(
+    DIVIDE(SUM('atp_matches_2024_1 1'[w_1stIn]), SUM('atp_matches_2024_1 1'[w_svpt])) * 100,
+    0
+)
+
+====================================================
+Break Points Saved % = 
+ROUND(
+    DIVIDE(SUM('atp_matches_2024_1 1'[w_bpSaved]), SUM('atp_matches_2024_1 1'[w_bpFaced])) * 100,
+    0
+)
+
+====================================================
+
+FirstServeReturnWonPercent = 
+ROUND(
+    DIVIDE(
+        SUM('atp_matches_2024_1 1'[l_1stIn]) - SUM('atp_matches_2024_1 1'[l_1stWon]),
+        SUM('atp_matches_2024_1 1'[l_1stIn])
+    ) * 100,
+    0
+)
+
+====================================================
+
+SecondServePointsWonPercent = 
+ROUND(
+    DIVIDE(
+        SUM('atp_matches_2024_1 1'[w_2ndWon]),
+        SUM('atp_matches_2024_1 1'[w_svpt]) - SUM('atp_matches_2024_1 1'[w_1stIn])
+    ) * 100,
+    0
+)
+
+====================================================
+
+SecondServeReturnWonPercent = 
+ROUND(
+    DIVIDE(
+        SUM('atp_matches_2024_1 1'[l_svpt]) - SUM('atp_matches_2024_1 1'[l_1stIn]) - SUM('atp_matches_2024_1 1'[l_2ndWon]),
+        SUM('atp_matches_2024_1 1'[l_svpt]) - SUM('atp_matches_2024_1 1'[l_1stIn])
+    ) * 100,
+    0
+)
+
+====================================================
+
+TotalAcesByPlayer = 
+CALCULATE(
+    SUM('atp_matches_2024_1 1'[w_ace]) +
+    SUM('atp_matches_2024_1 1'[l_ace]),
+    FILTER(
+        'atp_matches_2024_1 1',
+        'atp_matches_2024_1 1'[winner_name] = SELECTEDVALUE(AllPlayers[player_name])
+        || 'atp_matches_2024_1 1'[loser_name] = SELECTEDVALUE(AllPlayers[player_name])
+    )
+)
+
+====================================================
+
+TotalDoubleFaultsByPlayer = 
+CALCULATE(
+    SUM('atp_matches_2024_1 1'[w_df]) +
+    SUM('atp_matches_2024_1 1'[l_df]),
+    FILTER(
+        'atp_matches_2024_1 1',
+        'atp_matches_2024_1 1'[winner_name] = SELECTEDVALUE(AllPlayers[player_name])
+        || 'atp_matches_2024_1 1'[loser_name] = SELECTEDVALUE(AllPlayers[player_name])
+    )
+)
+
